@@ -60,14 +60,17 @@ A quick solution is to put sockets which can't be opened on a stack and try them
 
 Another solution is to use one client socket for each `uchar`, while applying the stacking solution from above too.
 
-# Speed
+## Filesize in characters
+A file which contains more characters than the used type of index represents, can't be transfered.
+
+## Speed
 It's utterly slow, because the `uchars buckets` get worked on sequentially. Use a threading mechanism on the client side for sending indizes. On the serverside a mutex for building the uchar-array. This requires testing.
 
-# Countermeasures
+## Countermeasures
 * A `Deep Packet Inspection` firewall can filter packets that don't match the expected packet patterns.
 * An `Application` firewall can exclude packets based on the program they're created with.
 
-# Roadmap
+## Roadmap
 * redesign code
 * add threading to client-side stiching
 * add mutex to server-side weaving
