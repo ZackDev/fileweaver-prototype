@@ -7,7 +7,7 @@ The FileWeaver is built on a client/server architecture. Consisting of the `File
 
 * Instead of the traditional way of transferring a file byte-wise via a single network connection, the client requests a port for every unique character found in the file from the server.
 
-Example file content and corresponding server ports:
+Example file content and corresponding server ports, note that the ports are choosen randomly. Usually they would be above the list of known ports.
 
 File content: `Hello, world`
 
@@ -60,3 +60,10 @@ It's utterly slow, because the `uchars buckets` get worked on sequentially. Use 
 # Countermeasures
 * A `Deep Packet Inspection` firewall can filter packets that don't match the expected packet patterns.
 * An `Application` firewall can exclude packets based on the program they're created with.
+
+# Roadmap
+* redesign code
+* add threading to client-side stiching
+* add mutex to server-side weaving
+* add the option to limit the number of ports used to n, where n >= 1 e.g. nports=3
+* add the option to specify portnumbers e.g. ports=p1,p2,p3
