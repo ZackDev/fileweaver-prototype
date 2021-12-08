@@ -54,6 +54,12 @@ The server now puts the characters back together based on positional data receiv
 # Limitations
 For now, the communication between the server and client requires `n(uchars) + 1` ports, the number of unique chars and one more for the command channel. In most realworld setups one may not find enough open ports. A future version could work with less than `n(uchars) + 1` ports by sequentially using one port for many uchars. In theory, only one port is enough, when client and server differentiate between indizes and commands sent.
 
+The client uses a new socket for every `uchar index` it sends. The upper bound for number of sockets, which use file descriptors, is `ulimit -n = 1024`.
+
+A quick solution is to put sockets which can't be opened on a stack and try them again at a later time.
+
+Another solution is to use one client socket for each `uchar`, while applying the stacking solution from above too.
+
 # Speed
 It's utterly slow, because the `uchars buckets` get worked on sequentially. Use a threading mechanism on the client side for sending indizes. On the serverside a mutex for building the uchar-array. This requires testing.
 
