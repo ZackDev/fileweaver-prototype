@@ -69,6 +69,7 @@ It's utterly slow, because the `uchars buckets` get worked on sequentially. Use 
 ## Countermeasures
 * A `Deep Packet Inspection` firewall can filter packets that don't match the expected packet patterns.
 * An `Application` firewall can exclude packets based on the program they're created with.
+* A Whitelist approach to configuring a firewalls allowed programs/ports/packets probably closes off most connections.
 
 ## Roadmap
 * redesign code
