@@ -1,8 +1,6 @@
 ---
 date: 2021-12-07
 ---
-Advance the `FileWeaver` prototype to development phase.
-
 The FileWeaver is built on a client/server architecture. Consisting of the `FileWeaverClient` and `FileWeaverServer`. The goal is to provide a way of transfering files over the network with obscurity in mind.
 
 * Instead of the traditional way of transferring a file byte-wise via a single network connection, the client requests a port for every unique character found in the file from the server.
