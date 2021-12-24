@@ -69,8 +69,7 @@ It's utterly slow, because the `uchars buckets` get worked on sequentially. Use 
 * An `Application` firewall can exclude packets based on the program they're created with.
 * A Whitelist approach to configuring a firewalls allowed programs/ports/packets probably closes off most connections.
 
-## Roadmap
-* redesign code
+## Possible future features
 * add threading to client-side stiching
 * add the option to limit the number of ports used to n, where n >= 1 e.g. nports=3
 * add the option to specify portnumbers e.g. ports=p1,p2,p3
